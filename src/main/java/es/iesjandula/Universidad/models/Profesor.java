@@ -6,14 +6,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.SuperBuilder;
+import lombok.NoArgsConstructor;
 
 @EqualsAndHashCode(callSuper = false)
 @Data
 @Entity
-@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Profesor extends Persona
 {
 	@Id
