@@ -1,20 +1,14 @@
-package es.iesjandula.Matricula_Horario.models;
+package es.iesjandula.Universidad.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
-@EqualsAndHashCode(callSuper=false)
 @Data
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-public class Alumno extends Persona
+public class Grado
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

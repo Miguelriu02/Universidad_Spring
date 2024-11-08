@@ -1,10 +1,10 @@
-package es.iesjandula.Matricula_Horario.models.id;
+package es.iesjandula.Universidad.models.id;
 
 import java.io.Serializable;
 
-import es.iesjandula.Matricula_Horario.models.Alumno;
-import es.iesjandula.Matricula_Horario.models.Asignatura;
-import es.iesjandula.Matricula_Horario.models.Curso;
+import es.iesjandula.Universidad.models.Alumno;
+import es.iesjandula.Universidad.models.Asignatura;
+import es.iesjandula.Universidad.models.Curso;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;

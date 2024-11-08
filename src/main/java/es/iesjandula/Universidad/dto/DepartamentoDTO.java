@@ -1,4 +1,4 @@
-package es.iesjandula.Matricula_Horario.dto;
+package es.iesjandula.Universidad.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CursoEtapaDTO
+public class DepartamentoDTO
 {
-    private int curso;
-    private String etapa;
+	private String nombre;
 }

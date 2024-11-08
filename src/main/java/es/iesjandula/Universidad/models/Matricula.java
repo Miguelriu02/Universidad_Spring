@@ -1,6 +1,6 @@
-package es.iesjandula.Matricula_Horario.models;
+package es.iesjandula.Universidad.models;
 
-import es.iesjandula.Matricula_Horario.models.id.MatriculaId;
+import es.iesjandula.Universidad.models.id.MatriculaId;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import lombok.Data;

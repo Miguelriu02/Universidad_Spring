@@ -1,4 +1,4 @@
-package es.iesjandula.Matricula_Horario.dto;
+package es.iesjandula.Universidad.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

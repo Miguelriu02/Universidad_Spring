@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>es.iesjandula</groupId>
-	<artifactId>Matricula_Horario</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Matricula_Horario</name>
+	<artifactId>Universidad</artifactId>
+	<version>1.0.0</version>
+	<name>Universidad</name>
 	<description>This project is for upload and save the data into mysql database</description>
 	<url/>
 	<licenses>
@@ -42,7 +42,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>

@@ -1,4 +1,4 @@
-package es.iesjandula.Matricula_Horario.models;
+package es.iesjandula.Universidad.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
