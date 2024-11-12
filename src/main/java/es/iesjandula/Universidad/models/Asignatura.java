@@ -2,46 +2,41 @@ package es.iesjandula.Universidad.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@Entity
 @NoArgsConstructor
+@Data
 @AllArgsConstructor
-public class Asignatura
-{
+@Entity
+public class Asignatura {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	@Column(name = "id", length = 10)
+	private Long id;
 	
-	@Column(nullable = false)
-	private Integer creditos;
+	@Column(name = "creditos")
+	private Double creditos;
 	
-	@Column(nullable = false)
-	private Integer cuatrimestre;
+	@Column(name = "cuatrimestre")
+	private int cuatrimestre;
 	
-	@Column(nullable = false)
-	private Integer curso;
+	@Column(name = "curso")
+	private int curso;
 	
-	@Column(nullable = false)
+	@Column(name = "nombre", length = 80)
 	private String nombre;
 	
-	@Column(nullable = false)
+	@Column(name = "tipo", length = 45)
 	private String tipo;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_profesor", referencedColumnName = "id", nullable = false)
-	private Profesor profesor;
+	private Grado idGrado;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_grado", referencedColumnName = "id", nullable = false)
-	private Grado grado;
+	private Profesor idProfesor;
 	
 }

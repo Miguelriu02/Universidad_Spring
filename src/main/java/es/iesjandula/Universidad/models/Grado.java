@@ -1,20 +1,26 @@
 package es.iesjandula.Universidad.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @Data
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-public class Grado
-{
+@Table(name = "grado")
+public class Grado {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	@Column(name = "id", length = 10)
+		private Long id;
+	
+	
+	@Column(name = "nombre", length = 100)
+		private String nombre;
+	
+	
+	
 }
