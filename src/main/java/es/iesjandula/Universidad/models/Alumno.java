@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "alumno")
-public class Alumno {
-
+public class Alumno
+{
     @Id
     @Column(length= 100)  
     private Long id;

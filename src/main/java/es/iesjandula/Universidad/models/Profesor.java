@@ -1,6 +1,6 @@
 package es.iesjandula.Universidad.models;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,44 +15,38 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "profesor")
 public class Profesor {
-
 	@Id
 	@Column(name = "id", length = 10)
-		private Long id;
-	
+	private Long id;
+
 	@Column(name = "fecha_nacimiento", nullable = false)
-		private Date fecha_nacimiento;
-	
-	
+	private LocalDate fecha_nacimiento;
+
 	@ManyToOne
 	private Departamento idDepartamento;
-	
+
 	@Column(name = "apellido1", length = 100)
-		private String apellido1;
-	
+	private String apellido1;
+
 	@Column(name = "apellido2", length = 100)
-		private String apellido2;
-	
+	private String apellido2;
+
 	@Column(name = "ciudad", length = 100)
-		private String ciuidad;
-	
+	private String ciudad;
+
 	@Column(name = "direccion", length = 100)
-		private String direccion;
-	
+	private String direccion;
+
 	@Column(name = "nif", length = 10)
-		private String nif;
-	
+	private String nif;
+
 	@Column(name = "nombre", length = 100)
-		private String nombre;
-	
+	private String nombre;
+
 	@Column(name = "sexo", length = 100)
-		private String sexo;
-	
+	private String sexo;
+
 	@Column(name = "telefono", length = 100)
-		private String telefono;
-	
-	
-	
-	
-	
+	private String telefono;
+
 }

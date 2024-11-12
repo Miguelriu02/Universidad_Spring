@@ -22,8 +22,4 @@ public class Curso {
 	
 	@Column(name = "any_fin")
 	private int any_fin;
-	
-	
-	
-
 }

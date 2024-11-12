@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import es.iesjandula.Universidad.models.Departamento;
 import es.iesjandula.Universidad.repository.DepartamentoRepository;
+import es.iesjandula.Universidad.services.interfaces.IParseoDepartamento;
 import es.iesjandula.Universidad.utils.UniversidadServerError;
 
 @Service

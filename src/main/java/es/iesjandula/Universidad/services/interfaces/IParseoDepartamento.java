@@ -1,4 +1,4 @@
-package es.iesjandula.Universidad.services;
+package es.iesjandula.Universidad.services.interfaces;
 
 import java.util.Scanner;
 
