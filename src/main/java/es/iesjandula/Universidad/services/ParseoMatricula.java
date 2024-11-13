@@ -11,6 +11,7 @@ import es.iesjandula.Universidad.models.Alumno;
 import es.iesjandula.Universidad.models.Asignatura;
 import es.iesjandula.Universidad.models.Curso;
 import es.iesjandula.Universidad.models.Matricula;
+import es.iesjandula.Universidad.models.MatriculaId;
 import es.iesjandula.Universidad.repository.AlumnoRepository;
 import es.iesjandula.Universidad.repository.AsignaturaRepository;
 import es.iesjandula.Universidad.repository.CursoRepository;
@@ -45,26 +46,32 @@ public class ParseoMatricula implements IParseoMatricula
 
 		List<Matricula> matriculas = new ArrayList<>();
 
-		while (scanner.hasNextLine())
-		{
-			String line = scanner.nextLine();
-			String[] columnas = line.split(",");
+		while (scanner.hasNextLine()) {
+		    String line = scanner.nextLine();
+		    String[] columnas = line.split(",");
 
-			Matricula matricula = new Matricula();
+		    Matricula matricula = new Matricula();
+		  
 
-			Long alumnoId = Long.parseLong(columnas[0]);
-		    Alumno alumno = iAlumnoRepository.findById(alumnoId).orElseThrow(() -> new EntityNotFoundException("Alumno no encontrado con ID: " + alumnoId));
-			matricula.setIdAlumno(alumno);
-			
-			Long asignaturaId = Long.parseLong(columnas[1]);
-		    Asignatura asignatura = iAsignaturaRepository.findById(asignaturaId).orElseThrow(() -> new EntityNotFoundException("Asignatura no encontrada con ID: " + asignaturaId));
+		    Long alumnoId = Long.parseLong(columnas[0]);
+		    Alumno alumno = iAlumnoRepository.findById(alumnoId)
+		        .orElseThrow(() -> new EntityNotFoundException("Alumno no encontrado con ID: " + alumnoId));
+		    matricula.setIdAlumno(alumno);
+
+		    Long asignaturaId = Long.parseLong(columnas[1]);
+		    Asignatura asignatura = iAsignaturaRepository.findById(asignaturaId)
+		        .orElseThrow(() -> new EntityNotFoundException("Asignatura no encontrada con ID: " + asignaturaId));
 		    matricula.setIdAsignatura(asignatura);
-			
+
 		    Long cursoId = Long.parseLong(columnas[2]);
-		    Curso curso = iCursoRepository.findById(cursoId).orElseThrow(() -> new EntityNotFoundException("Curso no encontrado con ID: " + cursoId));
-			matricula.setIdCurso(curso);
-			
-			matriculas.add(matricula);
+		    Curso curso = iCursoRepository.findById(cursoId)
+		        .orElseThrow(() -> new EntityNotFoundException("Curso no encontrado con ID: " + cursoId));
+		    matricula.setIdCurso(curso);
+		    
+		    MatriculaId matriculaId = new MatriculaId(alumnoId, asignaturaId, cursoId);
+		    matricula.setMatriculaId(matriculaId);
+		    
+		    matriculas.add(matricula);
 		}
 		this.iMatriculaRepository.saveAllAndFlush(matriculas);
 	}

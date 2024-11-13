@@ -20,7 +20,6 @@ import es.iesjandula.Universidad.utils.Constants;
 @ComponentScan(basePackages = "es.iesjandula")
 public class UniversidadApplication implements CommandLineRunner
 {
-
 	@Autowired
 	private IParseoAlumno iParseoAlumno;
 	
@@ -57,5 +56,4 @@ public class UniversidadApplication implements CommandLineRunner
 		this.iParseoAsignatura.parseoAsignaturaCsv(Constants.scannerAsignatura());
 		this.iParseoMatricula.parseoMatriculaCsv(Constants.scannerMatricula());
 	}
-
 }

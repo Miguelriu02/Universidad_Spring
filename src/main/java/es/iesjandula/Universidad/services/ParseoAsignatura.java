@@ -61,6 +61,8 @@ public class ParseoAsignatura implements IParseoAsignatura
 			Long gradoId = Long.parseLong(columna[7]);
 			Grado grado = iGradoRepository.findById(gradoId).orElseThrow(() -> new EntityNotFoundException("Grado no encontrado con ID: " + gradoId));
 			asignatura.setIdGrado(grado);
+			
+			asignaturas.add(asignatura);
 		}
 		this.iAsignaturaRepository.saveAllAndFlush(asignaturas);
 	}
