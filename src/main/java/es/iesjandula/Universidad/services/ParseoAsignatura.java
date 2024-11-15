@@ -15,7 +15,6 @@ import es.iesjandula.Universidad.repository.GradoRepository;
 import es.iesjandula.Universidad.repository.ProfesorRepository;
 import es.iesjandula.Universidad.services.interfaces.IParseoAsignatura;
 import es.iesjandula.Universidad.utils.UniversidadServerError;
-import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class ParseoAsignatura implements IParseoAsignatura
@@ -55,11 +54,11 @@ public class ParseoAsignatura implements IParseoAsignatura
 			asignatura.setCuatrimestre(Integer.parseInt(columna[5]));
 			
 			Long profesorId = Long.parseLong(columna[6]);
-		    Profesor profesor = iProfesorRepository.findById(profesorId).orElseThrow(() -> new EntityNotFoundException("Profesor no encontrado con ID: " + profesorId));
+		    Profesor profesor = iProfesorRepository.findById(profesorId).orElseThrow(() -> new UniversidadServerError(1, "Profesor no encontrado con ID: " + profesorId));
 			asignatura.setIdProfesor(profesor);
 			
 			Long gradoId = Long.parseLong(columna[7]);
-			Grado grado = iGradoRepository.findById(gradoId).orElseThrow(() -> new EntityNotFoundException("Grado no encontrado con ID: " + gradoId));
+			Grado grado = iGradoRepository.findById(gradoId).orElseThrow(() -> new UniversidadServerError(2, "Grado no encontrado con ID: " + gradoId));
 			asignatura.setIdGrado(grado);
 			
 			asignaturas.add(asignatura);

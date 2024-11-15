@@ -15,7 +15,6 @@ import es.iesjandula.Universidad.repository.DepartamentoRepository;
 import es.iesjandula.Universidad.repository.ProfesorRepository;
 import es.iesjandula.Universidad.services.interfaces.IParseoProfesor;
 import es.iesjandula.Universidad.utils.UniversidadServerError;
-import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class ParseoProfesor implements IParseoProfesor
@@ -59,7 +58,7 @@ public class ParseoProfesor implements IParseoProfesor
 			profesor.setSexo(columna[9]);
 			
 			Long departamentoId = Long.parseLong(columna[10]);
-		    Departamento departamento = iDepartamentoRepository.findById(departamentoId).orElseThrow(() -> new EntityNotFoundException("Departamento no encontrado con ID: " + departamentoId));
+		    Departamento departamento = iDepartamentoRepository.findById(departamentoId).orElseThrow(() -> new UniversidadServerError(3, "Departamento no encontrado con ID: " + departamentoId));
 			profesor.setIdDepartamento(departamento);
 			
 			profesores.add(profesor);

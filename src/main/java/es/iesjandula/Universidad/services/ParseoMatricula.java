@@ -18,7 +18,6 @@ import es.iesjandula.Universidad.repository.CursoRepository;
 import es.iesjandula.Universidad.repository.MatriculaRepository;
 import es.iesjandula.Universidad.services.interfaces.IParseoMatricula;
 import es.iesjandula.Universidad.utils.UniversidadServerError;
-import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class ParseoMatricula implements IParseoMatricula
@@ -55,17 +54,17 @@ public class ParseoMatricula implements IParseoMatricula
 
 		    Long alumnoId = Long.parseLong(columnas[0]);
 		    Alumno alumno = iAlumnoRepository.findById(alumnoId)
-		        .orElseThrow(() -> new EntityNotFoundException("Alumno no encontrado con ID: " + alumnoId));
+		        .orElseThrow(() -> new UniversidadServerError(4, "Alumno no encontrado con ID: " + alumnoId));
 		    matricula.setIdAlumno(alumno);
 
 		    Long asignaturaId = Long.parseLong(columnas[1]);
 		    Asignatura asignatura = iAsignaturaRepository.findById(asignaturaId)
-		        .orElseThrow(() -> new EntityNotFoundException("Asignatura no encontrada con ID: " + asignaturaId));
+		        .orElseThrow(() -> new UniversidadServerError(5, "Asignatura no encontrada con ID: " + asignaturaId));
 		    matricula.setIdAsignatura(asignatura);
 
 		    Long cursoId = Long.parseLong(columnas[2]);
 		    Curso curso = iCursoRepository.findById(cursoId)
-		        .orElseThrow(() -> new EntityNotFoundException("Curso no encontrado con ID: " + cursoId));
+		        .orElseThrow(() -> new UniversidadServerError(6, "Curso no encontrado con ID: " + cursoId));
 		    matricula.setIdCurso(curso);
 		    
 		    MatriculaId matriculaId = new MatriculaId(alumnoId, asignaturaId, cursoId);
