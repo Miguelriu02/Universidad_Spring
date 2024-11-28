@@ -22,11 +22,10 @@ public class Departamento {
 	
 	@Column(name = "nombre", length = 100)
 		private String nombre;
-	
+	/*
 	@OneToMany(mappedBy="idDepartamento")
 		private List<Profesor> profesor;
-	
-	
+	*/
 	
 
 }
