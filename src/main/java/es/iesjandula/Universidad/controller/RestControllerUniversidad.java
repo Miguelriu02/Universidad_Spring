@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.iesjandula.Universidad.dto.MatriculaRequest;
+import es.iesjandula.Universidad.dto.MatriculaDto;
 import es.iesjandula.Universidad.models.Alumno;
 import es.iesjandula.Universidad.models.Asignatura;
 import es.iesjandula.Universidad.models.Curso;
@@ -39,7 +39,7 @@ public class RestControllerUniversidad
 	private MatriculaRepository matriculaRepository;
 
 	@RequestMapping(method = RequestMethod.POST, value = "/matricular")
-	public ResponseEntity<?> matricularAlumno(@RequestBody(required = true) MatriculaRequest matriculaRequest)
+	public ResponseEntity<?> matricularAlumno(@RequestBody(required = true) MatriculaDto matriculaRequest)
 	{
 		try
 		{

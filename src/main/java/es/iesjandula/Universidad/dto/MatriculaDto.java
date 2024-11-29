@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MatriculaRequest
+public class MatriculaDto
 {
 	private Long alumnoId;
 	private Long cursoId;
