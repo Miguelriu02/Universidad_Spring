@@ -1,11 +1,8 @@
 package es.iesjandula.Universidad.models;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,10 +19,5 @@ public class Departamento {
 	
 	@Column(name = "nombre", length = 100)
 		private String nombre;
-	/*
-	@OneToMany(mappedBy="idDepartamento")
-		private List<Profesor> profesor;
-	*/
-	
 
 }

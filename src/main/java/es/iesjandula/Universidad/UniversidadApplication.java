@@ -54,7 +54,7 @@ public class UniversidadApplication implements CommandLineRunner
 		this.iParseoGrado.parseoGradoCsv(Constants.scannerGrado());
 		this.iParseoProfesor.parseoProfesorCsv(Constants.scannerProfesor());
 		this.iParseoAsignatura.parseoAsignaturaCsv(Constants.scannerAsignatura());
-		this.iParseoMatricula.parseoMatriculaCsv(Constants.scannerMatricula());
+		//this.iParseoMatricula.parseoMatriculaCsv(Constants.scannerMatricula());
 		
 	}
 }

@@ -5,11 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class AlumnoDTO
+@NoArgsConstructor
+public class MatriculaRequest
 {
-	private Integer id;
-	private String nombre;
-	private String apellidos;
+	private Long alumnoId;
+	private Long cursoId;
+	private Long asignaturaId;
+
 }

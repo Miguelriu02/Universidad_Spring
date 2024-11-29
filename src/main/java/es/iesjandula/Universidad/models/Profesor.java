@@ -49,4 +49,6 @@ public class Profesor {
 	@Column(name = "telefono", length = 100)
 	private String telefono;
 
+	@ManyToOne
+	private Departamento departamento;
 }
